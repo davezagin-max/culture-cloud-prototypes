@@ -2,6 +2,11 @@
 
 Clickable prototypes for the O.C. Tanner sponsored project (IS 4496, University of Utah, Group 7).
 
+- **Live demo:** https://davezagin-max.github.io/culture-cloud-prototypes/
+- **Code:** https://github.com/davezagin-max/culture-cloud-prototypes
+
+The demo link opens in any browser with no login. It works on a phone too.
+
 Goal: get more Gen Z frontline workers sending meaningful recognition each month. The metric is recognition sent.
 
 | # | Prototype | Lead | Route |
