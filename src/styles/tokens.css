@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+/*
+ * DESIGN TOKENS — the one place to change the look of all three prototypes.
+ *
+ * STATUS: PLACEHOLDER. These values are deliberately neutral (greys, system
+ * font). They are NOT the Culture Cloud brand. Once product screenshots are in
+ * reference/, replace the values below to match them. Every component reads
+ * from these tokens, so nothing else needs to change.
+ *
+ * Each token becomes a Tailwind utility:
+ *   --color-primary   ->  bg-primary, text-primary, border-primary
+ *   --radius-card     ->  rounded-card
+ *   --shadow-card     ->  shadow-card
+ *   --font-sans       ->  font-sans (the default)
+ */
+@theme {
+  /* Typography */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+
+  /* Page and surfaces */
+  --color-canvas: #efefec; /* behind the phone frame */
+  --color-surface: #ffffff; /* app background, cards */
+  --color-surface-muted: #f4f4f1; /* quiet panels, input backgrounds */
+  --color-line: #dfdfda; /* borders and dividers */
+
+  /* Text */
+  --color-ink: #1d1d1b;
+  --color-ink-muted: #5c5c57;
+  --color-ink-subtle: #85857f;
+
+  /* Brand action colour (buttons, selected states) */
+  --color-primary: #1d1d1b;
+  --color-primary-hover: #3a3a37;
+  --color-on-primary: #ffffff;
+  --color-primary-soft: #e9e9e5; /* selected chip / row background */
+
+  /* Feedback */
+  --color-success: #1f7a4d;
+  --color-success-soft: #e2f2e9;
+  --color-attention: #8a5a00;
+  --color-attention-soft: #fbf1d9;
+  --color-record: #c9302c; /* recording dot */
+
+  /* Dark surfaces: camera viewfinder, device frame */
+  --color-night: #161615;
+  --color-on-night: #ffffff;
+
+  /* Avatar tints (initials sit on these) */
+  --color-avatar-1: #dcd9ee;
+  --color-avatar-2: #d5e6dd;
+  --color-avatar-3: #f0dfd0;
+  --color-avatar-4: #d6e2ef;
+  --color-avatar-5: #ecd8de;
+  --color-avatar-6: #e3e3c9;
+
+  /* Shape */
+  --radius-card: 16px;
+  --radius-control: 12px;
+  --radius-pill: 999px;
+
+  /* Elevation */
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.05), 0 6px 16px rgb(0 0 0 / 0.05);
+  --shadow-device: 0 24px 60px rgb(0 0 0 / 0.22);
+
+  /* Motion */
+  --animate-drop-in: drop-in 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.1) both;
+  --animate-pop: pop 0.35s cubic-bezier(0.2, 0.9, 0.3, 1.3) both;
+
+  @keyframes drop-in {
+    from {
+      opacity: 0;
+      transform: translateY(-120%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes pop {
+    from {
+      opacity: 0;
+      transform: scale(0.6);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

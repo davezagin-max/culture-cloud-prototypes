@@ -1,0 +1,9 @@
+node_modules
+dist
+.DS_Store
+*.local
+.claude/settings.local.json
+
+# Product screenshots stay on your own machine. They are not ours to publish.
+reference/*
+!reference/.gitkeep
